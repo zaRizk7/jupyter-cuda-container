@@ -16,4 +16,4 @@ RUN git clone https://github.com/zaRizk7/ml-packages.git && \
 
 RUN curl -fsSL https://code-server.dev/install.sh | sh
 
-ADD run.sh
+ADD run.sh ~
