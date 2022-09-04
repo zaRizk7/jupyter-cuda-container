@@ -21,8 +21,8 @@ RUN curl https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/p
 	unzip ~/.poshthemes/themes.zip -d ~/.poshthemes && \
 	chmod u+rw ~/.poshthemes/*.json && \
 	rm ~/.poshthemes/themes.zip && \
-	echo 'export POSHTHEMES=".poshthemes"' >> .bashrc && \
-	echo 'eval "$(oh-my-posh --init --shell bash --config ~/$POSHTHEMES/craver.omp.json)"' >> .bashrc && \
+	echo 'export POSHTHEMES=".poshthemes"' >> ~/.bashrc && \
+	echo 'eval "$(oh-my-posh --init --shell bash --config ~/$POSHTHEMES/craver.omp.json)"' >> ~/.bashrc && \
 	source ~/.bashrc && \
 	clear
 
