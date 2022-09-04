@@ -22,6 +22,7 @@ RUN wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/p
 	chmod u+rw ~/.poshthemes/*.json && \
 	rm ~/.poshthemes/themes.zip && \
 	echo 'export POSHTHEMES=".poshthemes"' >> ~/.bashrc && \
+	source ~/.bashrc && \
 	echo 'eval "$(oh-my-posh --init --shell bash --config ~/$POSHTHEMES/craver.omp.json)"' >> ~/.bashrc && \
 	source ~/.bashrc && \
 	clear
