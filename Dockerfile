@@ -1,5 +1,7 @@
 FROM nvcr.io/nvidia/tensorflow:22.08-tf2-py3
 
+EXPOSE 8888 8889
+
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
 
 RUN apt-get update -y
