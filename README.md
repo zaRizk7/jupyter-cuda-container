@@ -24,5 +24,5 @@ docker build jupyter-cuda-docker -t zarizky/jupyter-cuda:latest
 ```
 6. Finally, run the container using command:
 ```
-docker run --gpus all -it --rm -p 0.0.0.0:8888:8888 -p 0.0.0.0:8889:8889 --gpus all --ipc=host --ulimit memlock=-1 --ulimit stack=67108864 zarizky/jupyter-cuda
+docker run --gpus all --ipc=host --ulimit memlock=-1 --ulimit stack=67108864 -it --rm -p 0.0.0.0:8888:8888 -p 0.0.0.0:8889:8889 zarizky/jupyter-cuda
 ```
