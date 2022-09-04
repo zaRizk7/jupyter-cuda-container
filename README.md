@@ -13,4 +13,4 @@ Note that this step is for Ubuntu with NVIDIA drivers installed.
 3. Reboot using ```sudo reboot now``` (Optional)
 4. Test Docker communication with GPU using ```sudo docker run --rm --gpus all nvidia/cuda:11.0-base nvidia-smi```
 6. If the Dockerfile haven't been built, run ```docker build . -t zarizky/jupyter-cuda:latest```.
-7. Finally, run the container using command ```docker run --gpus all -it --rm -p 0.0.0.0:8888:8888 --ulimit memlock=-1 --ulimit stack=67108864 jupyter-cuda```
+7. Finally, run the container using command ```docker run --gpus all -it --rm -p 0.0.0.0:8888:8888 --gpus all --ipc=host --ulimit memlock=-1 --ulimit stack=67108864 jupyter-cuda```
