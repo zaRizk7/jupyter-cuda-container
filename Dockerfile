@@ -16,7 +16,7 @@ RUN git clone https://github.com/zaRizk7/ml-packages.git && \
 
 RUN curl -fsSL https://code-server.dev/install.sh | sh
 
-RUN tmux new -d -s jupyter-lab-server && \
+CMD tmux new -d -s jupyter-lab-server && \
 	tmux send-keys -t jupyter-lab-server "jupyter lab . --port=8888" C-m && \
 	tmux new -d -s vscode-server && \
 	tmux send-keys -t vscode-server "PORT=8889 code-server" C-m && \
