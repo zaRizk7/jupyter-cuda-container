@@ -20,7 +20,7 @@ sudo docker run --rm --gpus all nvidia/cuda:11.0-base nvidia-smi
 ```
 5. If the Dockerfile haven't been built, run: 
 ```
-docker build . -t zarizky/jupyter-cuda:latest
+docker build jupyter-cuda-docker -t zarizky/jupyter-cuda:latest
 ```
 6. Finally, run the container using command:
 ```
