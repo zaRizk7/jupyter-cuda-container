@@ -19,3 +19,5 @@ RUN curl -fsSL https://code-server.dev/install.sh | sh
 ADD run.sh /workspace
 
 RUN chmod +x /workspace/run.sh
+
+ENTRYPOINT ./run.sh
