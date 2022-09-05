@@ -18,6 +18,6 @@ RUN curl -fsSL https://code-server.dev/install.sh | sh
 
 ADD run.sh /bin
 
-ADD inspect-server.sh /bin
+ADD inspect.sh /bin
 
-RUN chmod +x /workspace/run.sh
+RUN chmod +x /bin/run.sh /bin/inspect.sh
