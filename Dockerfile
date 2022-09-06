@@ -14,8 +14,6 @@ RUN git clone https://github.com/zaRizk7/ml-packages.git && \
 	pip install -r ml-packages/requirements-cuda-docker.txt && \
 	rm -rf ml-packages
 
-RUN jupyter lab build && jupyter lab clean
-
 RUN curl -fsSL https://code-server.dev/install.sh | sh
 
 ADD run /bin
