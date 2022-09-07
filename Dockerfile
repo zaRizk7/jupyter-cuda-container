@@ -8,9 +8,7 @@ RUN apt-get update -y
 
 RUN apt-get install tmux -y
 
-RUN pip install --upgrade pip
-
-RUN curl -sSL https://install.python-poetry.org | python3 -
+RUN pip install --upgrade pip poetry
 
 RUN git clone https://github.com/zaRizk7/ml-packages.git && \
 	poetry add $( cat ml-packages/requirements-cuda-docker.txt ) && \
