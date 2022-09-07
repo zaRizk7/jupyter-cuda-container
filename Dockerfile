@@ -10,6 +10,8 @@ RUN apt-get install tmux -y
 
 RUN pip install --upgrade pip pipupgrade
 
+RUN pipupgrade -y
+
 RUN git clone https://github.com/zaRizk7/ml-packages.git && \
 	pipupgrade -yr ml-packages/requirements-cuda-docker.txt && \
 	rm -rf ml-packages
