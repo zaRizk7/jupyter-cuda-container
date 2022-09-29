@@ -11,7 +11,7 @@ RUN apt-get install tmux curl git -y
 RUN pip install --upgrade pip
 
 RUN git clone https://github.com/zaRizk7/ml-packages.git && \
-	pip install --upgrade ml-packages/requirements-cuda-docker.txt && \
+	pip install --upgrade -r ml-packages/requirements-cuda-docker.txt && \
 	rm -rf ml-packages
 
 RUN curl -fsSL https://code-server.dev/install.sh | sh
