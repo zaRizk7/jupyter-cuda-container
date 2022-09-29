@@ -1,4 +1,4 @@
-FROM nvcr.io/nvidia/tensorflow:22.08-tf2-py3
+FROM tensorflow/tensorflow:latest
 
 EXPOSE 8888 8889
 
