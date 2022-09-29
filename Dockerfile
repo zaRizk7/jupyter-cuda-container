@@ -6,9 +6,9 @@ RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selectio
 
 RUN apt-get update -y
 
-RUN apt-get install tmux -y
+RUN apt-get install tmux curl git -y
 
-RUN pip install --upgrade pip pip-tools
+RUN pip install --upgrade pip
 
 RUN git clone https://github.com/zaRizk7/ml-packages.git && \
 	pip install --upgrade ml-packages/requirements-cuda-docker.txt && \
