@@ -24,6 +24,8 @@ RUN git clone https://github.com/zaRizk7/ml-packages.git && \
 
 RUN curl -fsSL https://code-server.dev/install.sh | sh
 
+RUN jupyter nbextension enable --py widgetsnbextension
+
 ADD run /bin
 
 ADD inspect /bin
