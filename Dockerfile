@@ -22,8 +22,7 @@ RUN git clone https://github.com/zaRizk7/ml-packages.git && \
 	pip install --upgrade -r ml-packages/requirements-cuda-docker.txt && \
 	rm -rf ml-packages
 	
-RUN python -m nltk.downloader all && \
-	python -m spacy download en_core_web_sm && \
+RUN python -m spacy download en_core_web_sm && \
 	python -m textblob.download_corpora
 
 RUN curl -fsSL https://code-server.dev/install.sh | sh
