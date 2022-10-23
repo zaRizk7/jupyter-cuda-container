@@ -25,14 +25,9 @@ RUN git clone https://github.com/zaRizk7/ml-packages.git && \
 RUN python -m spacy download en_core_web_sm && \
 	python -m textblob.download_corpora
 
-RUN curl -fsSL https://code-server.dev/install.sh | sh
-
-RUN jupyter nbextension enable --py widgetsnbextension && \
-	code-server --install-extension ms-python.python
+RUN jupyter nbextension enable --py widgetsnbextension
 
 ADD run /bin
-
-ADD inspect /bin
 
 RUN chmod +x /bin/run
 
