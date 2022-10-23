@@ -14,7 +14,7 @@ RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
 
 RUN apt-get update -y
 
-RUN apt-get install tmux git gh nodejs -y
+RUN apt-get install git gh nodejs -y
 
 RUN pip install --upgrade pip
 
