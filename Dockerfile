@@ -1,5 +1,7 @@
 FROM tensorflow/tensorflow:latest-gpu
 
+ENV SHELL=/bin/bash
+
 EXPOSE 8888
 
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
@@ -27,4 +29,4 @@ RUN python -m spacy download en_core_web_sm && \
 
 RUN jupyter nbextension enable --py widgetsnbextension
 
-ENTRYPOINT ["jupyter", "lab", "/home", "--port=8888", "--no-browser"]
+ENTRYPOINT ["jupyter", "lab", "/home", "--port=8888", "--no-browser", "--allow-root"]
