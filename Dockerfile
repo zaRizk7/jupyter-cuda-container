@@ -18,7 +18,8 @@ RUN apt-get install git gh nodejs -y
 
 RUN pip install --upgrade pip
 
-RUN sh -c "$(curl -fsSL https://github.com/deluan/zsh-in-docker/releases/download/v1.1.3/zsh-in-docker.sh | bash -)"
+RUN apt-get install wget \
+	&& sh -c "$(wget -O- https://github.com/deluan/zsh-in-docker/releases/download/v1.1.3/zsh-in-docker.sh)"
 
 RUN git clone https://github.com/zaRizk7/ml-packages.git && \
 	pip install --upgrade -r ml-packages/requirements-cuda-docker.txt && \
@@ -30,7 +31,7 @@ RUN python -m spacy download en_core_web_sm && \
 RUN jupyter nbextension enable --py widgetsnbextension
 
 RUN apt-get autoremove -y \
-    && apt-get clean -y \
-    && rm -rf /var/lib/apt/lists/*
+	&& apt-get clean -y \
+	&& rm -rf /var/lib/apt/lists/*
 
 ENTRYPOINT ["jupyter", "lab", "/home", "--port=8888", "--no-browser", "--allow-root"]
