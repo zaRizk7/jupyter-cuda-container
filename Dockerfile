@@ -36,4 +36,6 @@ RUN apt-get autoremove -y \
 	
 SHELL ["/bin/zsh", "-ec"]
 
+ENV SHELL=/bin/zsh
+
 ENTRYPOINT ["jupyter", "lab", "/home", "--port=8888", "--no-browser", "--allow-root"]
