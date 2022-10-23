@@ -18,7 +18,7 @@ RUN apt-get install git gh nodejs -y
 
 RUN pip install --upgrade pip
 
-RUN /bin/sh -c sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+RUN sh -c "$(wget -O- https://github.com/deluan/zsh-in-docker/releases/download/v1.1.3/zsh-in-docker.sh)"
 
 RUN git clone https://github.com/zaRizk7/ml-packages.git && \
 	pip install --upgrade -r ml-packages/requirements-cuda-docker.txt && \
