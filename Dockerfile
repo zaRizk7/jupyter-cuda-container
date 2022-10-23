@@ -1,6 +1,6 @@
 FROM tensorflow/tensorflow:latest-gpu
 
-EXPOSE 8888 8889
+EXPOSE 8888
 
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
 
@@ -34,4 +34,6 @@ ADD run /bin
 
 ADD inspect /bin
 
-RUN chmod +x /bin/run /bin/inspect
+RUN chmod +x /bin/run
+
+CMD ["run"]
