@@ -33,5 +33,7 @@ RUN jupyter nbextension enable --py widgetsnbextension
 RUN apt-get autoremove -y \
 	&& apt-get clean -y \
 	&& rm -rf /var/lib/apt/lists/*
+	
+SHELL ["/bin/zsh", "-ec"]
 
 ENTRYPOINT ["jupyter", "lab", "/home", "--port=8888", "--no-browser", "--allow-root"]
