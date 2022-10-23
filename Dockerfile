@@ -27,4 +27,4 @@ RUN python -m spacy download en_core_web_sm && \
 
 RUN jupyter nbextension enable --py widgetsnbextension
 
-ENTRYPOINT ["jupyter", "lab", "/root", "--port=8888", "--no-browser", "--allow-root"]
+ENTRYPOINT ["jupyter", "lab", "/home", "--port=8888", "--no-browser", "--allow-root"]
