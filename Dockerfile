@@ -1,7 +1,5 @@
 FROM tensorflow/tensorflow:latest-gpu
 
-ENV SHELL=/bin/bash
-
 EXPOSE 8888
 
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
@@ -19,6 +17,8 @@ RUN apt-get update -y
 RUN apt-get install git gh nodejs -y
 
 RUN pip install --upgrade pip
+
+RUN /bin/sh -c sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
 RUN git clone https://github.com/zaRizk7/ml-packages.git && \
 	pip install --upgrade -r ml-packages/requirements-cuda-docker.txt && \
