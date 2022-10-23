@@ -31,4 +31,4 @@ ADD run /bin
 
 RUN chmod +x /bin/run
 
-CMD ["run"]
+CMD ["sh", "run"]
