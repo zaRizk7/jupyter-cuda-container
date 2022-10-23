@@ -31,4 +31,5 @@ ADD run /bin
 
 RUN chmod +x /bin/run
 
-ENTRYPOINT ["sh", "run"]
+ENTRYPOINT ["jupyter", "lab", "/root", "--port=8888", "--no-browser"]
+
