@@ -4,7 +4,7 @@ EXPOSE 8888
 
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
 
-RUN type -p curl >/dev/null || apt-get install tmux curl libgl1-mesa-glx ffmpeg libsm6 libxext6 -y
+RUN type -p curl >/dev/null || apt-get install tmux curl zip libgl1-mesa-glx ffmpeg libsm6 libxext6 -y
 
 RUN curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
 	&& chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
