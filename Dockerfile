@@ -25,7 +25,8 @@ RUN git clone https://github.com/zaRizk7/ml-packages.git && \
 	rm -rf ml-packages
 	
 RUN python -m spacy download en_core_web_sm && \
-	python -m textblob.download_corpora
+	python -m textblob.download_corpora && \
+	python -m nltk.downloader popular
 
 RUN jupyter nbextension enable --py widgetsnbextension
 
