@@ -4,7 +4,7 @@ EXPOSE 8888
 
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
 
-RUN type -p curl >/dev/null || apt-get install tmux curl zip libgl1-mesa-glx ffmpeg libsm6 libxext6 aria2 -y
+RUN type -p curl >/dev/null || apt-get install tmux curl wget zip libgl1-mesa-glx ffmpeg libsm6 libxext6 aria2 -y
 
 RUN /bin/bash -c "$(curl -sL https://git.io/vokNn |  sed 's/sudo//')"
 
@@ -19,8 +19,7 @@ RUN apt-fast update -y && \
 
 RUN pip install --upgrade pip
 
-RUN apt-fast install wget \
-	&& sh -c "$(wget -O- https://github.com/deluan/zsh-in-docker/releases/download/v1.1.3/zsh-in-docker.sh)"
+RUN sh -c "$(wget -O- https://github.com/deluan/zsh-in-docker/releases/download/v1.1.3/zsh-in-docker.sh)"
 
 RUN git clone https://github.com/zaRizk7/ml-packages.git && \
 	pip install --upgrade -r ml-packages/requirements-cuda-docker.txt && \
