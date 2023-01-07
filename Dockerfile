@@ -6,7 +6,7 @@ RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selectio
 
 RUN type -p curl >/dev/null || apt-get install tmux curl wget zip libgl1-mesa-glx ffmpeg libsm6 libxext6 aria2 -y
 
-RUN apt-fast install wget && \
+RUN apt-get install wget && \
 	/bin/bash -c "$(curl -sL https://git.io/vokNn |  sed 's/sudo//')"
 
 RUN curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
