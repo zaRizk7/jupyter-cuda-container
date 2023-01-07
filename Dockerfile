@@ -4,7 +4,9 @@ EXPOSE 8888
 
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
 
-RUN type -p curl >/dev/null || apt-get install tmux curl zip libgl1-mesa-glx ffmpeg libsm6 libxext6 -y
+RUN type -p curl >/dev/null || apt-get install tmux curl zip libgl1-mesa-glx ffmpeg libsm6 libxext6 aria2 -y
+
+RUN /bin/bash -c "$(curl -sL https://git.io/vokNn)"
 
 RUN curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
 	&& chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
@@ -12,12 +14,12 @@ RUN curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | d
 
 RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
 
-RUN apt-get update -y && \
-	apt-get install git gh nodejs texlive-latex-base texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra graphviz libgraphviz-dev --fix-missing -y
+RUN apt-fast update -y && \
+	apt-fast install git gh nodejs texlive-latex-base texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra graphviz libgraphviz-dev --fix-missing -y
 
 RUN pip install --upgrade pip
 
-RUN apt-get install wget \
+RUN apt-fast install wget \
 	&& sh -c "$(wget -O- https://github.com/deluan/zsh-in-docker/releases/download/v1.1.3/zsh-in-docker.sh)"
 
 RUN git clone https://github.com/zaRizk7/ml-packages.git && \
@@ -30,8 +32,8 @@ RUN python -m spacy download en_core_web_sm && \
 
 RUN jupyter nbextension enable --py widgetsnbextension
 
-RUN apt-get autoremove -y \
-	&& apt-get clean -y \
+RUN apt-fast autoremove -y \
+	&& apt-fast clean -y \
 	&& rm -rf /var/lib/apt/lists/*
 	
 SHELL ["/bin/zsh", "-ec"]
